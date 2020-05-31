@@ -16,29 +16,25 @@ def summon_captain_planet(planeteer_calls)
 end
 
 # Question 3
-# The method should tell us if any of the calls are longer than four characters. 
-# want calls > 4 to be true and < 4 to be false
-
 def long_planeteer_calls(calls)
     calls.any? do |call|
     call.size > 4
     end
 end
 
-# calls.each do |something|
-#   something.size > 4
-# end
-
-
 # Question 4
 # It should then look through these strings to find and return the first string that is a type of cheese.
 
-def find_the_cheese(cheeseArray)
+def find_the_cheese(array)
   # the array below is here to help
   cheese_types = ["cheddar", "gouda", "camembert"]
-  
-  cheeseArray.include>(cheese_types) 
-
-
+  array.find {|cheese| cheese.include?("#{cheese_types}")}
 end
 
+
+def find_the_cheese(array)
+  cheese_types = ["cheddar", "gouda", "camembert"]
+  array.find do |item|
+    cheese_types.include?(item)
+  end
+end
